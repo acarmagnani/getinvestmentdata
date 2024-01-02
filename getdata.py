@@ -21,7 +21,6 @@ def getData(tipo , simbolo):
     r = requests.get(url , headers = headers)
     soup = BeautifulSoup(r.text , 'html.parser')
 
-
     papel = simbolo
     preco = soup.find(string='Valor atual').find_next('strong').text
     min = soup.find(string='Min. 52 semanas').find_next('strong').text
@@ -67,7 +66,6 @@ def getData(tipo , simbolo):
     else:
         pass
 
-
     if tipo == 'acoes':
         papel = {
             'papel': papel,
@@ -110,7 +108,6 @@ def getData(tipo , simbolo):
     else:
         pass
 
-
     return papel
 
 
@@ -134,16 +131,16 @@ print(f'FIIS: {fiisdata}')
 print(f'Fiinfras: {fiinfrasdata}')
 
 
-#with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/stockdata.json' , 'w') as f:
-#    json.dump(stockdata , f)
+with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/stockdata.json' , 'w') as f:
+    json.dump(stockdata , f)
 
-#with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/etfsdata.json' , 'w') as f:
-#    json.dump(etfsdata , f)
+with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/etfsdata.json' , 'w') as f:
+    json.dump(etfsdata , f)
 
-#with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/fiisdata.json' , 'w') as f:
-#    json.dump(fiisdata , f)
+with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/fiisdata.json' , 'w') as f:
+    json.dump(fiisdata , f)
 
-#with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/fiinfras.json' , 'w') as f:
-#    json.dump(fiinfrasdata , f)
+with open('D:/OneDrive/Documentos/PROGRAMAÇÃO/VSCODE/CARTEIRA INVEST/Data/fiinfras.json' , 'w') as f:
+    json.dump(fiinfrasdata , f)
 
 print('Fin.')
